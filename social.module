@@ -481,7 +481,6 @@ function social_view($entity, $view_mode = 'default') {
   // Now invoke hook_entity_view_alter().
   drupal_alter(array('social_view', 'entity_view'),
     $entity->content, $entity_type);
-  dpm(entity_label('social', $entity));
 
   // And finally return the content.
   return $entity->content;
@@ -640,6 +639,13 @@ function social_delete($entity) {
 }
 
 /**
+ * Use the controller to delete multiple
+ */
+function social_delete_multiple($smids) {
+  entity_get_controller('social')->delete($smids);
+}
+
+/**
  * Saves a social type to the db.
  */
 function social_type_save(SocialType $type) {
@@ -786,10 +792,6 @@ class Social extends Entity {
  * The class used for model type entities
  */
 class SocialType extends Entity {
-
-  public $type;
-  public $label;
-
   public function __construct($values = array()) {
     parent::__construct($values, 'social_type');
   }
