@@ -4,7 +4,7 @@ core = 7.x
 package = Social
 
 dependencies[] = feeds
-dependencies[] = feeds_jsonpath_parser
+dependencies[] = feeds_ex
 dependencies[] = libraries
 dependencies[] = social
 
