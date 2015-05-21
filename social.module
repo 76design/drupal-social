@@ -145,7 +145,6 @@ function social_entity_info() {
       'id' => 'id',
       'name' => 'type',
       'label' => 'label',
-      'bundle' => 'type',
     ),
     'access callback' => 'social_type_access',
     'module' => 'social',
